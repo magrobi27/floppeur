@@ -48,7 +48,7 @@ const WriteComment: React.FC = () => {
         <Layout>
             <div>
                 <form onSubmit={submitData}>
-                    <h1>commenter : </h1>
+                    <h1>commenter  : </h1>
 
                 </form>
             </div>
