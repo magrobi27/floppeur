@@ -149,11 +149,16 @@ const Header: React.FC = () => {
     right = (
       <div className="right">
         <p>
-          {session.user.name} ({session.user.email})
+            {session.user.name} ({session.user.email})
         </p>
         <Link href="/create">
           <button>
             <a>Nouveau Post</a>
+          </button>
+        </Link>
+        <Link href="/profil">
+          <button>
+            <a>Profil</a>
           </button>
         </Link>
         <button onClick={() => signOut()}>
