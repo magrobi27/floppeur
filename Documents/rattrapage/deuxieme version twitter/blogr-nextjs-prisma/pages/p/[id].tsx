@@ -85,7 +85,7 @@ const Post: React.FC<PostProps> = (props) => {
     title = `${title} (Draft)`;
   }
   var commentTxt;
-  if (!props.published && userHasValidSession && postBelongsToUser && props.comments == null) {
+  if (!props.published && userHasValidSession && postBelongsToUser && props.commentsId == null) {
     commentTxt =  <br></br> ;
   } 
 
@@ -123,13 +123,14 @@ const Post: React.FC<PostProps> = (props) => {
         <br></br>
         <h3>Commentaires :</h3>
         {
-            props.comments.map(element=>
+            props.commentsId.map(element=>
                  
                   <h5 key={element.id} > {element.commentateur.name} à répondu : { element.message }</h5>
-      
            )
          
-        }
+        } 
+
+        
         
         
         {
