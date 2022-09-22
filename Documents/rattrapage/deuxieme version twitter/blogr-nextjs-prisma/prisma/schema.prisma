@@ -23,7 +23,7 @@ model Floppe {
   published Boolean @default(false)
   poster       User?    @relation(fields: [posterId], references: [id])
   posterId     String?
-  commentsId Comments[]
+  commentsId Comment[]
 }
 
 //model pour un user
@@ -37,15 +37,15 @@ model User {
   //userPassword String
   image           String?   
   posts        Floppe[] //tableau de floppes (posts)
-  comments     Comments[]
+  comments     Comment[]
   accounts      Account[]
   sessions      Session[]
   //@@map(name: "users")
 }
 
-model Comments {
-  commentID Int      @unique @default(autoincrement())
-  comment   String
+model Comment {
+  id String      @unique @id @default(cuid())
+  message   String
   //createdAt DateTime? @default(now()) @map(name: "created_at")
   commentateur   User? @relation(fields: [commentUserId], references: [id])
   commentUserId String?

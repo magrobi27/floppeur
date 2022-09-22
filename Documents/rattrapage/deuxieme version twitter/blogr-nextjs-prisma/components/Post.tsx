@@ -12,6 +12,7 @@ export type PostProps = {
   } | null;
   content: string;
   published: boolean;
+  comments : any;
 };
 
 const Post: React.FC<{ post: PostProps }> = ({ post }) => {
@@ -28,7 +29,6 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
           padding: 2rem;
         }
       `}</style>
-      <div><a href="writeComment">Comment</a></div>
     </div>
   );
 };
